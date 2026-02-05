@@ -9,7 +9,7 @@ variable "instance_type" {
     type = string
     description = "INSTANCE SIZE"
 
-    #We can write validation here to use only these 3 type of instances sizes, Other than taht we cannot create
+    #We can write validation here to use only these 3 type of instances sizes, Other than that we cannot create
     
     validation {
        condition = contains(["t3.micro", "t3.small", "t3.medium"], var.instance_type)

@@ -5,6 +5,11 @@ variable "aws_ami" {
 
 variable "instance_size" {
     default = "t3.micro"
+
+    validation {
+      condition = contains(["t3.micro", "t3.small", "t3.medium"],var.instance_size)
+      error_message = "Only t3.micro, t3.small, t3.medium instance types are allowed to create"
+    }
 }
 
 #mandatory for project to provice
